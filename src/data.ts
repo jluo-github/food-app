@@ -118,3 +118,101 @@ export const featuredProducts: Products = [
     options: [{ title: "Regular", additionalPrice: 0 }],
   },
 ];
+
+type Menu = {
+  id: number;
+  slug: string;
+  title: string;
+  desc?: string;
+  img?: string;
+  color: string;
+}[];
+
+export const menu: Menu = [
+  {
+    id: 4,
+    slug: "salads",
+    title: "Salads",
+    desc: "Crisp Green Salads, vibrant veggies, and delicious dressings for a refreshing meal.",
+    img: "/image/food11.png",
+    color: "green",
+  },
+  {
+    id: 5,
+    slug: "sandwiches",
+    title: "Sandwiches",
+    desc: "Satisfy your hunger with our sandwiches filled with premium ingredients.",
+    img: "/image/food15.png",
+    color: "brown",
+  },
+  {
+    id: 6,
+    slug: "seafood",
+    title: "Seafood",
+    desc: "From grilled salmon to shrimp scampi, indulge in our delicious seafood dishes.",
+    img: "/image/food21.png",
+    color: "blue",
+  },
+];
+
+export const sandwiches: Products = [
+  {
+    id: 1,
+    title: "Classic Club Sandwich",
+    desc: "Layers of roasted turkey, crispy bacon, fresh lettuce, ripe tomatoes, and creamy mayonnaise between toasted slices of bread.",
+    img: "/image/food15.png",
+    price: 10.99,
+    options: [
+      { title: "Regular", additionalPrice: 0 },
+      { title: "Combo ", additionalPrice: 3 },
+      { title: "Large Combo", additionalPrice: 5 },
+    ],
+  },
+  {
+    id: 2,
+    title: "Grilled Chicken Panini",
+    desc: "Grilled chicken breast, melted cheese, caramelized onions, and tangy pesto sauce pressed between crispy, toasted ciabatta bread.",
+    img: "/image/food13.png",
+    price: 12.75,
+    options: [
+      { title: "Regular", additionalPrice: 0 },
+      { title: "Combo ", additionalPrice: 4 },
+    ],
+  },
+  {
+    id: 3,
+    title: "Vegetarian Wrap",
+    desc: "A colorful medley of fresh veggies, hummus, avocado, and feta cheese wrapped in a soft flour tortilla.",
+    img: "/image/food14.png",
+    price: 9.5,
+    options: [
+      { title: "Regular", additionalPrice: 0 },
+      { title: "Combo ", additionalPrice: 4 },
+    ],
+  },
+  {
+    id: 4,
+    title: "Philly Cheesesteak",
+    desc: "Tender slices of beef, grilled onions, bell peppers, and melted provolone cheese on a toasted hoagie roll.",
+    img: "/image/food16.png",
+    price: 14.99,
+    options: [
+      { title: "Regular", additionalPrice: 0 },
+      { title: "Combo ", additionalPrice: 3 },
+      { title: "Large Combo", additionalPrice: 5 },
+    ],
+  },
+];
+
+export const singleProduct: Product = {
+  id: 1,
+  title: "Rainbow Roll",
+  desc: "Indulge in our colorful Rainbow Roll, featuring a variety of fresh fish such as tuna, salmon, and avocado, rolled with sushi rice and seaweed, topped with vibrant slices of fish and avocado for a delightful sushi experience.",
+  img: "/image/food24.png",
+  price: 18.99,
+  options: [
+    { title: "Regular", additionalPrice: 0 },
+    { title: "Combo ", additionalPrice: 4 },
+    { title: "Large Combo", additionalPrice: 6 },
+  ],
+};
