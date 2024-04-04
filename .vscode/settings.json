@@ -18,5 +18,13 @@
     "titleBar.inactiveBackground": "#927df299",
     "titleBar.inactiveForeground": "#15202b99"
   },
-  "peacock.color": "#927df2"
+  "peacock.color": "#927df2",
+  "react-native.android.logCatArguments": [
+    "*:S",
+    "ReactNative:V",
+    "ReactNativeJS:V"
+  ],
+  "reactSnippets.settings.importReactOnTop": true,
+  "autoimport.filesToScan": "**/*.{ts,tsx,js,jsx,json}",
+  "autoimport.doubleQuotes": true
 }
