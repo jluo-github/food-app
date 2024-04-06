@@ -15,9 +15,9 @@ const Price = ({ product }: { product: ProductType }) => {
 
   useEffect(() => {
     useCartStore.persist.rehydrate();
-  },[]);
+  }, []);
 
-  useEffect(() => { 
+  useEffect(() => {
     const newPrice = options?.length
       ? Number(options[selected].additionalPrice) + Number(price)
       : price;
@@ -47,7 +47,7 @@ const Price = ({ product }: { product: ProductType }) => {
           <button
             onClick={() => setSelected(index)}
             key={option.title}
-            className='min-w-[6rem] py-1 px-2 ring-1 ring-rose-400 rounded-md '
+            className='min-w-[6rem] py-1 px-2 ring-1 ring-amber-400 rounded-md '
             style={{
               background: selected === index ? "#f43f5e" : "white",
               color: selected === index ? "white" : "#f43f5e",
@@ -61,7 +61,7 @@ const Price = ({ product }: { product: ProductType }) => {
 
       <div className='flex justify-between items-center '>
         {/* <h3>Quantity</h3> */}
-        <div className='flex justify-between w-full p-2  border border-rose-500'>
+        <div className='flex justify-between w-full p-2  border border-amber-700'>
           <span className=''>{quantity}</span>
           <div className=' gap-4 flex items-center '>
             <button
@@ -86,7 +86,7 @@ const Price = ({ product }: { product: ProductType }) => {
         {/*   button */}
 
         <button
-          className='w-52   text-bold bg-rose-500 text-white p-2 border border-rose-500 rounded-r-md hover:bg-rose-600'
+          className='w-52   text-bold bg-amber-700 text-white p-2 border border-amber-700 rounded-r-md hover:bg-amber-600'
           onClick={handleAddToCart}>
           Add to Cart
         </button>

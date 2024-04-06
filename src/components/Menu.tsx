@@ -15,7 +15,7 @@ interface LinkType {
 const links: LinkType[] = [
   { id: 1, title: "Home", url: "/" },
   { id: 2, title: "Menu", url: "/menu" },
-  { id: 3, title: "Hours", url: "/hours" },
+  { id: 3, title: "Orders", url: "/orders" },
   { id: 4, title: "Contact", url: "/contact" },
 ];
 
@@ -46,7 +46,7 @@ const Menu = () => {
       )}
 
       {open && (
-        <div className='bg-rose-500 items-center justify-center flex flex-col gap-8 w-full z-10  text-white absolute left-0 top-24 h-[calc(100vh-6rem)]'>
+        <div className='bg-amber-700 items-center justify-center flex flex-col gap-8 w-full z-10  text-white absolute left-0 top-24 h-[calc(100vh-6rem)]'>
           {links.map((link) => (
             <Link key={link.id} href={link.url} onClick={() => setOpen(false)}>
               {link.title}

@@ -5,8 +5,6 @@ Please visit
 ```
 npm install react-countdown --save
 
-
-
 ```
 
 ### npm
@@ -15,7 +13,6 @@ npm install react-countdown --save
 npm i prisma @prisma/client
 
 npx prisma init --datasource-provider postgresql
-
 
 npx prisma migrate dev --name init
 npx prisma db push
@@ -28,7 +25,6 @@ npx prisma db push
 
 npm install next-auth
 
-
 ```
 
 ### npm
@@ -36,7 +32,6 @@ npm install next-auth
 ```
 
 npm i @tanstack/react-query
-
 
 ```
 
@@ -46,13 +41,11 @@ npm i @tanstack/react-query
 
 npm i react-toastify
 
-
 ```
 
 ### npm
 
 ```
 npm install zustand
-
 
 ```

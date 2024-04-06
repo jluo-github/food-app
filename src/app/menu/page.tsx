@@ -39,7 +39,7 @@ const MenuPage = async () => {
             </div>
 
             {/* text */}
-            <div className='{`text-${category.color} flex flex-col justify-between items-center border border-b border-rose-500 shadow-lg`}'>
+            <div className='{`text-${category.color} flex flex-col justify-between items-center border border-b border-amber-700 shadow-lg`}'>
               <h1 className='uppercase  font-bold text-3xl py-2'>
                 {category.title}
               </h1>
@@ -47,7 +47,7 @@ const MenuPage = async () => {
 
               <div>
                 <button
-                  className={`bg-rose-500 px-2 py-1 rounded-md text-white mb-12`}>
+                  className={`bg-amber-700 px-2 py-1 rounded-md text-white mb-12`}>
                   Explore
                 </button>
               </div>

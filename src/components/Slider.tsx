@@ -1,5 +1,7 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const data = [
@@ -31,25 +33,31 @@ const data = [
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const router = useRouter();
   // todo: fix the slider
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentSlide((prev) => (prev === data.length - 1 ? 0 : prev + 1));
-  //   }, 3000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev === data.length - 1 ? 0 : prev + 1));
+    }, 3000);
 
-  //   return () => clearInterval(interval);
-  // }, [currentSlide]);
+    return () => clearInterval(interval);
+  }, [currentSlide]);
 
   return (
-    <div className='flex flex-col h-[calc(100vh-6rem)] md:h-[calc(100vh-8rem)] lg:flex-row bg-rose-50  '>
+    <div className='flex flex-col h-[calc(100vh-6rem)] md:h-[calc(100vh-8rem)] lg:flex-row bg-amber-50  '>
       {/* text */}
-      <div className='h-1/2 flex items-center justify-center flex-col gap-8 text-rose-500 font-bold flex-1'>
+      <div className='h-1/2 flex items-center justify-center flex-col gap-8 text-amber-700 font-bold flex-1'>
         <h1 className='text-5xl text-center uppercase p-4 md:p-10 md:text-6xl xl:text-7xl'>
           {data[currentSlide].title}
         </h1>
-        <button className='bg-rose-500 text-white py-4 px-8 text-2xl rounded-md '>
+        <p className='text-center p-4 md:p-10 text-slate-500 text-2xl'>
+          {data[currentSlide].desc}
+        </p>
+        <Link
+          href='/menu'
+          className='bg-amber-700 text-white py-4 px-8 text-2xl rounded-md '>
           Order Now
-        </button>
+        </Link>
       </div>
 
       {/* image */}

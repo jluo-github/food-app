@@ -27,18 +27,17 @@ const DeleteButton = ({ id }: { id: string }) => {
       if (response.ok) {
         router.push("/menu");
         toast.success("Product has been deleted.");
-      }else{
+      } else {
         const data = await response.json();
         toast.error(data.message);
       }
-
     } catch (error) {
       toast.error("something went wrong!");
     }
   };
 
   return (
-    <button className='bg-rose-500 rounded-full p-2 absolute top-4 right-4 text-white '>
+    <button className='bg-amber-700 rounded-full p-2 absolute top-4 right-4 text-white '>
       <Image
         src='/delete.png'
         alt='delete'

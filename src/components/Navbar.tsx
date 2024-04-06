@@ -9,12 +9,12 @@ const Navbar = () => {
   const user = true;
 
   return (
-    <div className='h-12 text-rose-500 p-4 flex md:h-24 items-center justify-between border-b-2 border-b-rose-500 uppercase lg:px-20 lx:px-40'>
+    <div className='h-12 text-amber-700 p-4 flex md:h-24 items-center justify-between border-b-2 border-b-amber-700 uppercase lg:px-20 lx:px-40'>
       {/* left */}
       <div className='hidden md:flex gap-4 flex-1'>
         <Link href='/'>Home</Link>
         <Link href='/menu'>Menu</Link>
-        <Link href='/hours'>Hours</Link>
+        {/* <Link href='/orders'>Orders</Link> */}
         <Link href='/contact'>Contact</Link>
       </div>
       {/* logo */}

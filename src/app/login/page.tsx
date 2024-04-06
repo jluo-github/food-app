@@ -23,14 +23,14 @@ const LoginPage = () => {
         {/* form */}
 
         <div className=' p-10 lg:p-2 flex flex-col gap-8'>
-          <h1 className='font-bold text-xl  text-rose-500 lg:text-2xl '>
+          <h1 className='font-bold text-xl  text-amber-700 lg:text-2xl '>
             PurpleCat Food
           </h1>
           <p>Login or register</p>
 
           {/* google signin */}
           <button
-            className='flex gap-4 p-4 ring-1 ring-rose-100 rounded-md '
+            className='flex gap-4 p-4 ring-1 ring-amber-100 rounded-md '
             onClick={() => signIn("google")}>
             <Image
               src='/google.png'

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import CountDown from "./CountDown";
 import image from "next/image";
+import Link from "next/link";
 
 const Offer = () => {
   return (
@@ -21,9 +22,11 @@ const Offer = () => {
 
         {/* button */}
         <div>
-          <button className='bg-rose-500 rounded-md text-white py-2 px-4 '>
+          <Link
+            href='/menu'
+            className='bg-amber-700 rounded-md text-white py-2 px-4 '>
             Order Now
-          </button>
+          </Link>
         </div>
       </div>
 

@@ -20,9 +20,9 @@ const SingleProductPage = async ({ params }: { params: { id: string } }) => {
 
   const singleProduct: ProductType = await getData(id);
   return (
-    <div className='p-4 lg:px-20 xl:px-40 h-screen flex flex-col justify-around text-rose-500 md:flex-row md:gap-6 md:items-center relative'>
+    <div className='p-4 lg:px-20 xl:px-40 h-screen flex flex-col justify-around text-amber-700 md:flex-row md:gap-6 md:items-center relative'>
       {/* img */}
-      {singleProduct.img && (
+      {singleProduct?.img && (
         <div className='relative h-1/2 w-full md:h-[70%]'>
           <Image
             fill
@@ -40,7 +40,7 @@ const SingleProductPage = async ({ params }: { params: { id: string } }) => {
         </h1>
         <p className=''>{singleProduct.desc}</p>
         <Price product={singleProduct} />
-        <DeleteButton id={singleProduct.id}/>
+        <DeleteButton id={singleProduct.id} />
       </div>
     </div>
   );

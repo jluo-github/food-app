@@ -69,7 +69,7 @@ const OrdersPage = () => {
             <tr
               key={item.id}
               className={`${
-                item.status === "delivered" ? "bg-slate-50" : "bg-rose-50"
+                item.status === "delivered" ? "bg-slate-50" : "bg-amber-50"
               }`}>
               <td className=' hidden md:block  py-6 px-1 '>{item.id}</td>{" "}
               <td className=' py-6 px-1 '>
