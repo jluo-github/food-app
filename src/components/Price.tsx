@@ -1,27 +1,46 @@
 "use client";
 
+import type { ProductType } from "@/type/types";
+import { useCartStore } from "@/utils/store";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
-type PriceProps = {
-  price: number;
-  id: number;
-  options?: { title: string; additionalPrice: number }[];
-};
+const Price = ({ product }: { product: ProductType }) => {
+  const { id, title, img, price, options } = product;
+  const { addToCart } = useCartStore();
 
-const Price = ({ price, id, options }: PriceProps) => {
   const [total, setTotal] = useState(price);
   const [quantity, setQuantity] = useState(1);
   const [selected, setSelected] = useState(0);
 
   useEffect(() => {
-    setTotal(
-      quantity * (options ? price + options[selected].additionalPrice : price)
-    );
+    useCartStore.persist.rehydrate();
+  },[]);
+
+  useEffect(() => { 
+    const newPrice = options?.length
+      ? Number(options[selected].additionalPrice) + Number(price)
+      : price;
+
+    setTotal(quantity * newPrice);
   }, [price, selected, quantity, options]);
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: product.id,
+      title: product.title,
+      img: product.img,
+      price: total,
+      optionTitle: product.options?.[selected].title,
+      quantity: quantity,
+    });
+
+    toast.success("Added to Cart");
+  };
 
   return (
     <div className='flex flex-col gap-4 '>
-      <h2 className='text-2xl font-bold'>${total.toFixed(2)}</h2>
+      <h2 className='text-2xl font-bold'>${total}</h2>
       {/* options */}
       <div className='flex gap-4'>
         {options?.map((option, index) => (
@@ -66,7 +85,9 @@ const Price = ({ price, id, options }: PriceProps) => {
 
         {/*   button */}
 
-        <button className='w-52   text-bold bg-rose-500 text-white p-2 border border-rose-500 rounded-r-md hover:bg-rose-600'>
+        <button
+          className='w-52   text-bold bg-rose-500 text-white p-2 border border-rose-500 rounded-r-md hover:bg-rose-600'
+          onClick={handleAddToCart}>
           Add to Cart
         </button>
       </div>

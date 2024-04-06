@@ -2,6 +2,7 @@ import Link from "next/link";
 import Menu from "./Menu";
 import Image from "next/image";
 import CartIcon from "./CartIcon";
+import UserLinks from "./UserLinks";
 
 const Navbar = () => {
   // todo user:
@@ -28,15 +29,14 @@ const Navbar = () => {
       {/* right */}
 
       <div className='hidden md:flex gap-4  items-center flex-1 justify-end '>
-        <div className='flex gap-2 items-center cursor-pointer md:absolute top-3 right-4 lg:static  bg-amber-300 px-1 rounded-md text-sm'>
+        <div className='flex gap-2 items-center cursor-pointer md:absolute top-3 right-4  bg-amber-300 px-1 rounded-md text-sm'>
           <Image src='/image/logo1.png' alt='tel' width={20} height={20} />{" "}
           <span>123-555-5555</span>
         </div>
-        {!user ? (
-          <Link href='/login'>Login</Link>
-        ) : (
-          <Link href='/orders'>Orders</Link>
-        )}
+
+        {/* user Links */}
+        <UserLinks />
+
         <CartIcon />
       </div>
     </div>
