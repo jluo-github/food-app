@@ -13,37 +13,44 @@ const LoginPage = () => {
   if (status === "authenticated") router.push("/");
 
   return (
-    <div className='h-[calc(100vh-6rem)] md:h-[calc(100vh-8rem)] flex p-4  items-center justify-center '>
+    <div className=' flex items-center justify-center min-h-screen bg-amber-50'>
       {/* container */}
-      <div className='h-full shadow-2xl rounded--md flex flex-col md:flex-row items-center  md:w-full '>
+      <div className='relative flex flex-col md:h-[400px] items-center gap-2 bg-white shadow-2xl md:flex-row  '>
         {/* image */}
-        <div className='relative h-1/3 w-full flex justify-center items-center md:h-full  md:w-1/2 '>
-          <Image src='/image/food1.png' alt='login' width={150} height={150} />
+        <div className=' w-1/2 hidden md:block '>
+          <Image
+            src='/image/food1.png'
+            alt='login'
+            width={400}
+            height={400}
+            rounded-xl
+          />
         </div>
-        {/* form */}
 
-        <div className=' p-10 lg:p-2 flex flex-col gap-8'>
-          <h1 className='font-bold text-xl  text-amber-700 lg:text-2xl '>
+        {/* right side */}
+
+        <div className=' p-6 md:p-20 '>
+          <h1 className='font-bold text-xl  text-amber-700 lg:text-2xl mb-5'>
             PurpleCat Food
           </h1>
-          <p>Login or register</p>
 
-          {/* google signin */}
-          <button
-            className='flex gap-4 p-4 ring-1 ring-amber-100 rounded-md '
-            onClick={() => signIn("google")}>
-            <Image
-              src='/google.png'
-              width={30}
-              height={30}
-              alt='google'
-              className='object-contain'
-            />
-            <span className=''>Sign in with Google</span>
-          </button>
+          <div className='flex flex-col justify-between items-center '>
+            {/* google signin */}
+            <button
+              className='flex gap-4 p-4 ring-1 ring-amber-100 rounded-md my-2'
+              onClick={() => signIn("google")}>
+              <Image
+                src='/google.png'
+                width={30}
+                height={30}
+                alt='google'
+                className='object-contain'
+              />
+              <span className=''>Sign in with Google</span>
+            </button>
 
-          {/* facebook signin */}
-          <button className='flex gap-4 p-4 ring-1 ring-blue-100 rounded-md'>
+            {/* facebook signin */}
+            {/* <button className='flex gap-4 p-4 ring-1 ring-blue-100 rounded-md my-2'>
             <Image
               src='/facebook.png'
               width={30}
@@ -52,15 +59,21 @@ const LoginPage = () => {
               className='object-contain'
             />
             <span className=''>Sign in with Facebook</span>
-          </button>
+          </button> */}
 
-          <p className='text-sm'>
-            Hava a problem?{" "}
-            <Link href='/' className='underline'>
-              {" "}
-              Contact us
-            </Link>
-          </p>
+            <div className='flex flex-col '>
+              <p className='my-4 text-sm   text-slate-500'>
+                Login or register.
+              </p>
+              <p className='text-sm my-2  text-slate-500'>
+                Have a problem?{" "}
+                <Link href='/' className='underline'>
+                  {" "}
+                  Contact us
+                </Link>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
