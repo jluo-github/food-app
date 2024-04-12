@@ -1,26 +1,22 @@
 import prisma from "@/utils/connect";
-import error from "next/error";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export const PUT = async ({ params }: { params: { intentId: string } }) => {
-  const { intentId } = params;
+export const PUT = async (req: NextRequest) => {
+  const { searchParams } = req.nextUrl;
+  const intentId = searchParams.get("intentId");
+
+  if (!intentId) {
+    return new NextResponse("intentId is required", { status: 400 });
+  }
+
   try {
     await prisma.order.update({
-      where: {
-        intent_id: intentId,
-      },
-      data: {
-        status: "In Progress",
-      },
+      where: { intent_id: intentId },
+      data: { status: "In Progress" },
     });
-    return {
-      status: 200,
-      body: JSON.stringify({ message: "Order has been updated" }),
-    };
+    return new NextResponse("Order has been updated", { status: 200 });
   } catch (error) {
-    return new NextResponse(
-      JSON.stringify({ message: "Something went wrong!" }),
-      { status: 500 }
-    );
+    console.error(error);
+    return new NextResponse("Something went wrong!", { status: 500 });
   }
 };
