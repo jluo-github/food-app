@@ -35,7 +35,7 @@ const Featured = async () => {
                   src={item.img}
                   alt='food'
                   fill
-                  className='object-contain '
+                  className='object-contain rounded-full'
                   // width={300}
                   // height={300}
                 />

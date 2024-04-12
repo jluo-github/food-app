@@ -31,7 +31,7 @@ const Offer = () => {
       </div>
 
       {/*image  */}
-      <div className='relative  flex-1 w-full'>
+      <div className='relative flex-1 w-full hover:scale-x-105 hover:scale-y-105 transition-all duration-700 my-8 '>
         <Image
           src='/image/food11.png '
           alt='food'
