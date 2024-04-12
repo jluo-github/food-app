@@ -65,44 +65,46 @@ const OrdersPage = () => {
         </thead>
 
         <tbody>
-          {data?.map((item: OrderType) => (
-            <tr
-              key={item.id}
-              className={`${
-                item.status === "delivered" ? "bg-slate-50" : "bg-amber-50"
-              }`}>
-              <td className=' hidden md:block  py-6 px-1 '>{item.id}</td>{" "}
-              <td className=' py-6 px-1 '>
-                {item.createdAt.toString().slice(0, 10)}
-              </td>{" "}
-              <td className='py-6 px-1 '>${item.price}</td>{" "}
-              <td className='hidden md:block  py-6 px-1'>
-                {item.products[0].title}
-              </td>{" "}
-              {session?.user.isAdmin ? (
-                <td>
-                  <form
-                    onSubmit={(e) => handleUpdate(e, item.id)}
-                    className='flex items-center justify-center gap-4 '>
-                    <input
-                      placeholder={item.status}
-                      className='p-2 ring-1 ring-slate-200 rounded-md '
-                    />
-                    <button className='bg-slate-500 p-2 rounded-full '>
-                      <Image
-                        alt='edit'
-                        src='/edit.png'
-                        width={20}
-                        height={20}
+          {data?.map((item: OrderType) => {
+            return (
+              <tr
+                key={item.id}
+                className={`${
+                  item.status === "delivered" ? "bg-slate-50" : "bg-amber-50"
+                }`}>
+                <td className=' hidden md:block  py-6 px-1 '>{item.id}</td>{" "}
+                <td className=' py-6 px-1 '>
+                  {item.createdAt.toString().slice(0, 10)}
+                </td>{" "}
+                <td className='py-6 px-1 '>${Number(item.price).toFixed(2)}</td>{" "}
+                <td className='hidden md:block  py-6 px-1'>
+                  {item.products[0].title}
+                </td>{" "}
+                {session?.user.isAdmin ? (
+                  <td>
+                    <form
+                      onSubmit={(e) => handleUpdate(e, item.id)}
+                      className='flex items-center justify-center gap-4 '>
+                      <input
+                        placeholder={item.status}
+                        className='p-2 ring-1 ring-slate-200 rounded-md '
                       />
-                    </button>
-                  </form>
-                </td>
-              ) : (
-                <td className=' py-6 px-1 '>{item.status} </td>
-              )}
-            </tr>
-          ))}
+                      <button className='bg-slate-500 p-2 rounded-full '>
+                        <Image
+                          alt='edit'
+                          src='/edit.png'
+                          width={20}
+                          height={20}
+                        />
+                      </button>
+                    </form>
+                  </td>
+                ) : (
+                  <td className=' py-6 px-1 '>{item.status} </td>
+                )}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
