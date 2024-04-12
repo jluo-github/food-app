@@ -12,9 +12,12 @@ const SuccessPage = () => {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const res = await fetch(` /api/confirm/${payment_intent}`, {
-          method: "PUT",
-        });
+        const res = await fetch(
+          `http://localhost:3000/api/confirm/${payment_intent}`,
+          {
+            method: "PUT",
+          }
+        );
         router.push("/orders");
       } catch (error) {}
     };

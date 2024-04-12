@@ -20,7 +20,7 @@ const CartPage = () => {
       router.push("/login");
     } else {
       try {
-        const res = await fetch(" /api/orders", {
+        const res = await fetch("http://localhost:3000/api/orders", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

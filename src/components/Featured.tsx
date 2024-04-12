@@ -4,7 +4,7 @@ import Link from "next/link";
 
 // fetch featurned products from the server
 const getData = async () => {
-  const res = await fetch(` /api/products`, {
+  const res = await fetch(`http://localhost:3000/api/products`, {
     cache: "no-store",
   });
 
